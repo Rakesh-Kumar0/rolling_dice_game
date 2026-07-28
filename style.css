@@ -13,7 +13,7 @@ body{
 
 .container{
     background-color: #581845;
-    max-width: 400px;
+    max-width: 600px;
     margin: 0 auto;
     padding: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -25,7 +25,7 @@ body{
     display: flex;
     justify-content: space-between;
     margin: 20px 0;
-    gap: 20px;
+    gap: 10px;
 }
 
 .player{
@@ -56,6 +56,35 @@ body{
     position: absolute;
     width: 40px;
     top: 214px;
-    left: 142px;
+    left: 137px;
 }
 
+.playAgainBtn{
+    display: none;
+}
+.playNextRoundBtn{
+    display: none;
+}
+button{
+    background-color: #007bff;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    font-size: 15px;
+}
+button:hover{
+    background-color: #0056b3;
+}
+
+#winnerMessage{
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 18px;
+    height: 20px;
+
+}
