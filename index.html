@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rolling Dice Game</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
@@ -26,8 +27,17 @@
                     <span></span>
                 </div>
             </div>
-            
         </div>
+        <img 
+        class="diceImagesrc"
+        id="diceImagesrc"
+        src="./assets/dice-1.png" 
+        alt="dice">
+        <button class="rollBtn">Roll dice</button>
+        <button class="playNextRoundBtn" id="playNextRoundBtn">Play Next Round</button>
+        <button class="playAgainBtn" id="playAgainBtn">Play Again</button>
+        <p id="winnerMessage"></p>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
