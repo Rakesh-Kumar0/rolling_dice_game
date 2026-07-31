@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function(){
             // Create the path to the corresponding dice image;
             const diceImage = `./assets/dice-${diceValue}.png`;
             // Set the src attribute of the dice image element to display the rolled dice
-            diceImagesrc.attributes.src.textContent = diceImage;
+            diceImagesrc.src = diceImage;
 
             // Change the background colors of the players' panels based on the current player
             if(currentPlayer === 1){
@@ -42,7 +42,12 @@ document.addEventListener("DOMContentLoaded", function(){
                 // Mark the current player as the winner of the round
                 winner = currentPlayer;
                 // Update the wins array based on the current player
-                winner === 2 ? (wins = [wins[0], wins[1] + 1]) : (wins = [wins[0] + 1, wins[1]]);
+                if (winner === 1) {
+                    wins[0]++;
+                } 
+                else {
+                    wins[1]++;
+                }    
                 // Check if either player has won 2 or more rounds and call the checkWinnerFun if true
                 if(wins[0] >=2 || wins[1] >=2) return checkWinnerFun();
 
@@ -93,8 +98,8 @@ document.addEventListener("DOMContentLoaded", function(){
         // Loop through the points tracker for each player (3 rounds)
         for(let i=0; i<3;i++){
             // Clear the text content to remove symbols (resetting points)
-            playerOnePoints.children[i].textContent = " ";
-            playerTwoPoints.children[i].textContent = " ";
+            playerOnePoints.children[i].textContent = "";
+            playerTwoPoints.children[i].textContent = "";
             // Set the background color of the points tracker cells to the initial color
             playerOnePoints.children[i].style.backgroundColor = "#89256b";
             playerTwoPoints.children[i].style.backgroundColor = "#89256b";
@@ -133,7 +138,7 @@ document.addEventListener("DOMContentLoaded", function(){
         rollBtn.style.display = "flex";
 
         // Clear any previous winner message
-        winnerMessage.textContent = " ";
+        winnerMessage.textContent = "";
     }
 
 
@@ -147,9 +152,9 @@ document.addEventListener("DOMContentLoaded", function(){
         // Set the current player back to Player 1
         currentPlayer = 1;
         // Clear any previous winner message
-        winnerMessage.textContent = " ";
+        winnerMessage.textContent = "";
         // Reset the round wins for both players to 0
-        wins[0, 0];
+        wins = [0, 0];
         // Reset the current round to 1
         round = 1;
         // Update the displayed round number
