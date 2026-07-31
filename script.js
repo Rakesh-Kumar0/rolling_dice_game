@@ -100,4 +100,25 @@ document.addEventListener("DOMContentLoaded", function(){
             playerTwoPoints.children[i].style.backgroundColor = "#89256b";
         }
     }
+
+
+    // This function checks if a player has won the game and updates the interface accordingly.
+    function checkWinnerFun(){
+        // Update the points display based on the winner of the current round
+        updatePointsFun();
+        // Display the "Play Again" button and hide the "Roll" button
+        playAgainBtn.style.display = "flex";
+        rollBtn.style.display = "none";
+
+        // Check if Player 1 has won the game (reached 2 or more round wins)
+        if(wins[0] >= 2){
+            // Display a victory message for Player 1
+            winnerMessage.innerHTML = `Player 1 won the game 🙌🙌`;
+        }
+
+        else if(wins[1] >= 2){
+            // Display a victory message for Player 2
+            winnerMessage.innerHTML = `Player 2 won the game 🙌🙌`;
+        }
+    }
 });
