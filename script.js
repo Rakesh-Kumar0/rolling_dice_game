@@ -121,4 +121,18 @@ document.addEventListener("DOMContentLoaded", function(){
             winnerMessage.innerHTML = `Player 2 won the game 🙌🙌`;
         }
     }
+
+    // This function prepares the interface for the next round of the game.
+    function playNextRound(){
+        // update the displayed round number
+        noOfRound.textContent = " " + round;
+        // Reset the 'winner' variable to null to indicate no winner yet in the new round
+        winner = null;
+        // Hide the "Play Next Round" button and display the "Roll" button
+        playNextRoundBtn.style.display = "none";
+        rollBtn.style.display = "flex";
+
+        // Clear any previous winner message
+        winnerMessage.textContent = " ";
+    }
 });
