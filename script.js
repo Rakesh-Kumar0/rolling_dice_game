@@ -85,7 +85,19 @@ document.addEventListener("DOMContentLoaded", function(){
             playerOnePoints.children[round -1].style.backgroundColor = "transparent";
             playerTwoPoints.children[round -1].style.backgroundColor = "transparent";
         }
-        
+    }
 
+
+    // This function resets the points display for both players at the start of a new game.
+    function resetPoints(){
+        // Loop through the points tracker for each player (3 rounds)
+        for(let i=0; i<3;i++){
+            // Clear the text content to remove symbols (resetting points)
+            playerOnePoints.children[i].textContent = " ";
+            playerTwoPoints.children[i].textContent = " ";
+            // Set the background color of the points tracker cells to the initial color
+            playerOnePoints.children[i].style.backgroundColor = "#89256b";
+            playerTwoPoints.children[i].style.backgroundColor = "#89256b";
+        }
     }
 });
