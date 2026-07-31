@@ -135,4 +135,26 @@ document.addEventListener("DOMContentLoaded", function(){
         // Clear any previous winner message
         winnerMessage.textContent = " ";
     }
+
+
+    // This function resets the game to its initial state for a new game.
+    function playAgain(){
+        // Reset the 'winner' variable to null to indicate no winner
+        winner = null;
+        // Hide the "Play Again" button and display the "Roll" button
+        playAgainBtn.style.display = "none";
+        rollBtn.style.display = "flex";
+        // Set the current player back to Player 1
+        currentPlayer = 1;
+        // Clear any previous winner message
+        winnerMessage.textContent = " ";
+        // Reset the round wins for both players to 0
+        wins[0, 0];
+        // Reset the current round to 1
+        round = 1;
+        // Update the displayed round number
+        noOfRound.textContent = " " + round;
+        // Reset the points display for both players
+        resetPoints();
+    }
 });
