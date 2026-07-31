@@ -63,4 +63,29 @@ document.addEventListener("DOMContentLoaded", function(){
             currentPlayer = currentPlayer === 1 ? 2 : 1;
         }
     }
+
+    // This function updates the points display based on the winner of the current round.
+    function updatePointsFun(){
+        // Check if the winner is Player 1
+        if(winner == 1){
+            // Display a checkmark symbol for Player 1 on the current round's points tracker
+            playerOnePoints.children[round -1].textContent = "✔️";
+            playerTwoPoints.children[round -1].textContent = "❌";
+
+            // Set the background color of the points tracker cells to transparent
+            playerOnePoints.children[round -1].style.backgroundColor = "transparent";
+            playerTwoPoints.children[round -1].style.backgroundColor = "transparent";
+        }
+        // Check if the winner is Player 1
+        if(winner == 2){
+            // Display a checkmark symbol for Player 1 on the current round's points tracker
+            playerOnePoints.children[round -1].textContent = "❌";
+            playerTwoPoints.children[round -1].textContent = "✔️";
+            // Set the background color of the points tracker cells to transparent
+            playerOnePoints.children[round -1].style.backgroundColor = "transparent";
+            playerTwoPoints.children[round -1].style.backgroundColor = "transparent";
+        }
+        
+
+    }
 });
