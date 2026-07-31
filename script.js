@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function(){
     const player2 = document.getElementById('player2');
     const rollBtn = document.getElementById('rollBtn');
     const playAgainBtn = document.getElementById('playAgainBtn');
-    const diceImagesrc = document.getElementById('diceImageSrc');
+    const diceImagesrc = document.getElementById('diceImagesrc');
     const winnerMessage = document.getElementById('winnerMessage');
     const noOfRound = document.getElementById('round');
     const playNextRoundBtn = document.getElementById('playNextRoundBtn');
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function(){
             // Create the path to the corresponding dice image;
             const diceImage = `./assets/dice-${diceValue}.png`;
             // Set the src attribute of the dice image element to display the rolled dice
-            diceImagesrc.attributes.src.textContent = diceImage;
+            diceImagesrc.src = diceImage;
 
             // Change the background colors of the players' panels based on the current player
             if(currentPlayer === 1){
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function(){
                     // Update the points
                     updatePointsFun();
                     // Display a message indicating the winner of the round and round number
-                    winnerMessage.textContent = `player ${winner} win round ${round} 🔥`;
+                    winnerMessage.textContent = `player ${winner} won round ${round} 🔥`;
                     // Display the button to play the next round and hide the roll button.
                     playNextRoundBtn.style.display = "flex";
                     rollBtn.style.display = "none";
